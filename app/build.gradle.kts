@@ -3,13 +3,17 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
+
     id("com.google.gms.google-services")
 
-    id("kotlin-kapt")
-    alias(libs.plugins.kotlin.serialization)
+//    id("kotlin-kapt")
+//    alias(libs.plugins.kotlin.serialization)
 
-    id("com.google.dagger.hilt.android")
+    //id("com.google.dagger.hilt.android")
 
+    //Koin
+
+//    alias(libs.plugins.ksp)
 }
 
 android {
@@ -88,12 +92,34 @@ dependencies {
 
 
     //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+//    implementation("com.google.dagger:hilt-android:2.51.1")
+//    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+//    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    //Koin
+    implementation(project.dependencies.platform("io.insert-koin:koin-bom:4.0.0"))
+    implementation("io.insert-koin:koin-core")
+
+    // Koin Test features
+    testImplementation("io.insert-koin:koin-test")
+    // Koin for JUnit 4
+    testImplementation("io.insert-koin:koin-test-junit4")
+    // Koin for JUnit 5
+    testImplementation("io.insert-koin:koin-test-junit5")
+    //Android
+    implementation("io.insert-koin:koin-android")
+    //ComposeMP
+    implementation("io.insert-koin:koin-compose")
+    implementation("io.insert-koin:koin-compose-viewmodel")
+    implementation("io.insert-koin:koin-compose-viewmodel-navigation")
+
 }
+// Compile time check
+//ksp {
+//    arg("KOIN_CONFIG_CHECK","true")
+//}
 
 // Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}
+//kapt {
+//    correctErrorTypes = true
+//}

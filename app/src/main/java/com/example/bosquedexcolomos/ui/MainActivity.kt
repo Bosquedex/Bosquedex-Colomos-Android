@@ -1,4 +1,4 @@
-package com.example.bosquedexcolomos
+package com.example.bosquedexcolomos.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
