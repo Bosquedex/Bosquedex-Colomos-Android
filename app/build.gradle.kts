@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
+    id("kotlin-kapt")
+    kotlin("plugin.serialization") version "2.0.0"
 
     id("com.google.gms.google-services")
 
@@ -86,6 +87,8 @@ dependencies {
 
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-auth")
 
     //Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
@@ -113,6 +116,7 @@ dependencies {
     implementation("io.insert-koin:koin-compose-viewmodel")
     implementation("io.insert-koin:koin-compose-viewmodel-navigation")
 
+
 }
 // Compile time check
 //ksp {
@@ -120,6 +124,6 @@ dependencies {
 //}
 
 // Allow references to generated code
-//kapt {
-//    correctErrorTypes = true
-//}
+kapt {
+    correctErrorTypes = true
+}
