@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Bosquedex Colomos</string>
+
+
+    <string name="log_image_cd"> Log Image </string>
+    <string name="log_signin_btn">Sign in</string>
+    <string name="log_signup_btn">Sign up</string>
+    <string name="signin_email_btn">Sign With Email/ID</string>
+    <string name="signin_github_btn">Sign with GitHub</string>
+    <string name="signin_google_btn">Sign with Google</string>
+    <string name="signup_phone_btn">Sign Up with Phone Number</string>
+    <string name="signup_email_btn">Sign Up with Email</string>
+    <string name="signup_github_btn">Sign Up with GitHub</string>
+    <string name="signup_google_btn">Sign Up with Google</string>
+
 </resources>

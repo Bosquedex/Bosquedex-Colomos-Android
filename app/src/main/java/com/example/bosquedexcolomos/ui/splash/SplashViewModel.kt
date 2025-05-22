@@ -8,7 +8,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class SplashViewModel constructor(): ViewModel() {
+class SplashViewModel (private val authService: AuthService): ViewModel() {
     fun navigate( navigate:() -> Unit){
         viewModelScope.launch {
             delay(1000L)
@@ -17,7 +17,7 @@ class SplashViewModel constructor(): ViewModel() {
         }
     }
     private fun isUserLogged(): Boolean {
-   //     return authService.isUserLogged()
+        return authService.isUserLogged()
     return false
     }
 
@@ -25,7 +25,6 @@ class SplashViewModel constructor(): ViewModel() {
         val isUserLogged = isUserLogged()
         if(isUserLogged){
             Log.i("BOSCLOG" ,"HOME")
-
             return SplashDestination.Home
         }else{
             Log.i("BOSCLOG" ,"LOGIN")
